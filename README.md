@@ -1,0 +1,1 @@
+# Авторизация с использованием Next.js, Shadcn UI, TypeScript и Tanstack Query
