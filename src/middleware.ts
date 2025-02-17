@@ -9,7 +9,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 export default function middleware(request: NextRequest) {
 	const { url, cookies } = request
 
-	const session = cookies.get('session')?.value
+	const session = cookies.get('nset_auth_session')?.value
 
 	const isAuthPage = url.includes('/auth')
 
