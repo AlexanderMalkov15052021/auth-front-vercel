@@ -27,7 +27,7 @@ export default function middleware(request: NextRequest) {
 	const isSettingNewPassword = url.includes('auth/new-password');
 
 	if (isResettingPassword || isSettingNewPassword) {
-		return NextResponse.next();
+		return res;
 	}
 
 	if (isAuthPage) {
@@ -35,7 +35,7 @@ export default function middleware(request: NextRequest) {
 			return NextResponse.redirect(new URL('/dashboard/settings', url))
 		}
 
-		return NextResponse.next()
+		return res;
 	}
 
 	if (!session) {
