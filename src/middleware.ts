@@ -10,10 +10,10 @@ export default function middleware(request: NextRequest) {
 
 	const res = NextResponse.next();
 
-	res.headers.append('Access-Control-Allow-Credentials', "true")
-	res.headers.append('Access-Control-Allow-Origin', 'https://auth-front-vercel.vercel.app')
-	res.headers.append('Access-Control-Allow-Methods', 'GET, DELETE, PATCH, POST, PUT, OPTIONS, PATCH')
-	res.headers.append('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
+	// res.headers.append('Access-Control-Allow-Credentials', "true")
+	// res.headers.append('Access-Control-Allow-Origin', 'https://auth-front-vercel.vercel.app')
+	// res.headers.append('Access-Control-Allow-Methods', 'GET, DELETE, PATCH, POST, PUT, OPTIONS, PATCH')
+	// res.headers.append('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version')
 
 
 	const { url, cookies } = request
