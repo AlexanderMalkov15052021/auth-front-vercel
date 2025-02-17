@@ -32,7 +32,7 @@ export function useLoginMutation(
 			} else {
 				console.log(data);
 				toast.success('Успешная авторизация')
-				router.push('/dashboard/settings')
+				// router.push('/dashboard/settings')
 			}
 		},
 		onError(error) {
