@@ -1,4 +1,4 @@
-import { api } from '@/shared/api'
+import { api, proxyAPI } from '@/shared/api'
 
 import type { TypeLoginSchema, TypeRegisterSchema } from '../schemes'
 import type { IAuthResponse } from '../types'
@@ -34,12 +34,21 @@ class AuthService {
 	public async login(body: TypeLoginSchema, recaptcha?: string) {
 		const headers = recaptcha ? { recaptcha } : undefined
 
-		const response = await api.post<IAuthResponse>('auth/login', body, {
+		const response = await proxyAPI.post<IAuthResponse>('api/auth/login', body, {
 			headers
 		})
 
 		return response
 	}
+	// public async login(body: TypeLoginSchema, recaptcha?: string) {
+	// 	const headers = recaptcha ? { recaptcha } : undefined
+
+	// 	const response = await api.post<IAuthResponse>('auth/login', body, {
+	// 		headers
+	// 	})
+
+	// 	return response
+	// }
 
 	/**
 	 * Аутентификация через провайдера.

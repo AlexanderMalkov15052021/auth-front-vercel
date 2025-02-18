@@ -9,3 +9,13 @@ export const api = new FetchClient({
 		credentials: 'include'
 	}
 })
+
+/**
+ * Экземпляр клиента для выполнения HTTP-запросов к API через proxy.
+ */
+export const proxyAPI = new FetchClient({
+	baseUrl: process.env.APPLICATION_URL as string,
+	options: {
+		credentials: 'include'
+	}
+})

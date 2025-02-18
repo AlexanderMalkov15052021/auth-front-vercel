@@ -8,6 +8,10 @@ const nextConfig = {
 	env: {
 		// URL сервера для API-запросов, получаемый из переменных окружения
 		SERVER_URL: process.env.SERVER_URL,
+		// URL сервера для Proxy-запросов, получаемый из переменных окружения
+		PROXY_URL: process.env.PROXY_URL,
+		// URL клиента для API-запросов, получаемый из переменных окружения
+		APPLICATION_URL: process.env.APPLICATION_URL,
 		// Ключ сайта Google reCAPTCHA для клиентской валидации
 		GOOGLE_RECAPTCHA_SITE_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY
 	},
