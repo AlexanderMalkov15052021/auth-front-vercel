@@ -31,7 +31,10 @@ export function useLoginMutation(
 				setIsShowFactor(true)
 			} else {
 				toast.success('Успешная авторизация')
-				router.push('/dashboard/settings')
+				setTimeout(() => {
+					router.push('/dashboard/settings')
+				}, 3000);
+
 			}
 		},
 		onError(error) {
