@@ -19,17 +19,15 @@ export async function POST(req: NextRequest) {
             request: requestUrl,
         });
 
-        const data = await serverReq.json();
+        const { cookie } = await serverReq.json();
 
         // console.log("cookie: ", cookie);
 
         // const cookie = serverReq.headers.get('set-cookie');
 
-        console.log("data: ", data);
+        console.log("cookie: ", cookie);
 
-        // res.headers.set('set-cookie', cookie);  // nset_auth_session
-
-        // console.log(serverReq);
+        res.headers.set('set-cookie', cookie);  // nset_auth_session
 
         // res.cookies.set('nset_auth_session', data);
 
