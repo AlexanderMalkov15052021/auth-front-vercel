@@ -24,17 +24,17 @@ export default function middleware(request: NextRequest) {
 		return res;
 	}
 
-	if (isAuthPage) {
-		if (session) {
-			return NextResponse.redirect(new URL('/dashboard/settings', url))
-		}
+	// if (isAuthPage) {
+	// 	if (session) {
+	// 		return NextResponse.redirect(new URL('/dashboard/settings', url))
+	// 	}
 
-		return res;
-	}
+	// 	return res;
+	// }
 
-	if (!session) {
-		return NextResponse.redirect(new URL('/auth/login', url))
-	}
+	// if (!session) {
+	// 	return NextResponse.redirect(new URL('/auth/login', url))
+	// }
 }
 
 /**
