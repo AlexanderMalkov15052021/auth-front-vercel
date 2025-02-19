@@ -31,24 +31,24 @@ class AuthService {
 	 * @param {string} [recaptcha] - Токен reCAPTCHA (опционально).
 	 * @returns {Promise<IAuthResponse>} - Ответ с данными пользователя.
 	 */
-	// public async login(body: TypeLoginSchema, recaptcha?: string) {
-	// 	const headers = recaptcha ? { recaptcha } : undefined
-
-	// 	const response = await proxyAPI.post<IAuthResponse>('api/auth/login', body, {
-	// 		headers
-	// 	})
-
-	// 	return response
-	// }
 	public async login(body: TypeLoginSchema, recaptcha?: string) {
 		const headers = recaptcha ? { recaptcha } : undefined
 
-		const response = await api.post<IAuthResponse>('auth/login', body, {
+		const response = await proxyAPI.post<IAuthResponse>('api/auth/login', body, {
 			headers
 		})
 
 		return response
 	}
+	// public async login(body: TypeLoginSchema, recaptcha?: string) {
+	// 	const headers = recaptcha ? { recaptcha } : undefined
+
+	// 	const response = await api.post<IAuthResponse>('auth/login', body, {
+	// 		headers
+	// 	})
+
+	// 	return response
+	// }
 
 	/**
 	 * Аутентификация через провайдера.
