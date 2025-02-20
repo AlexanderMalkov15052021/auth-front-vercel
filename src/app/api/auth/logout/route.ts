@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
     try {
         const requestUrl = req.url;
 
-        await fetch(`${process.env.SERVER_URL}/auth/proxy/logout` as string, {
+        const serverReq = await fetch(`${process.env.SERVER_URL}/auth/proxy/logout` as string, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -17,7 +17,11 @@ export async function POST(req: NextRequest) {
             request: requestUrl,
         });
 
-        res.cookies.delete("nset_auth_session");
+        const { cookie } = await serverReq.json();
+
+        console.log(cookie);
+
+        res.headers.set('set-cookie', cookie);
 
         return res;
 
