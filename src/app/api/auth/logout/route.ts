@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = 'force-dynamic';
-
 export async function POST(req: NextRequest) {
 
     try {
@@ -24,7 +22,7 @@ export async function POST(req: NextRequest) {
 
         console.log(cookie);
 
-        res.headers.set('set-cookie', cookie);
+        res.headers.set('set-cookie', 'nset_auth_session=; Domain=auth-front-vercel.vercel.app; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT');
 
         return res;
 
