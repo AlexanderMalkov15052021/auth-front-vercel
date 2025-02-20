@@ -6,9 +6,11 @@ export async function POST(req: NextRequest) {
         const requestUrl = req.url;
 
         const serverReq = await fetch(`${process.env.SERVER_URL}/auth/proxy/logout` as string, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
-            }
+            },
+            body: JSON.stringify({})
         });
 
         const res = NextResponse.json({
