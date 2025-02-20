@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
 
@@ -21,7 +22,9 @@ export async function POST(req: NextRequest) {
 
         console.log(cookie);
 
-        res.headers.set('set-cookie', cookie);
+        // res.headers.set('set-cookie', cookie);
+
+        cookies().delete("nset_auth_session");
 
         return res;
 

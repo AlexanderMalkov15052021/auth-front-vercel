@@ -3,8 +3,7 @@ const nextConfig = {
 	// Экспериментальные функции для Next.js
 	experimental: {
 		// Отключение функции "missing Suspense with CSR bailout"
-		missingSuspenseWithCSRBailout: false,
-		serverComponents: false,
+		missingSuspenseWithCSRBailout: false
 	},
 	env: {
 		// URL сервера для API-запросов, получаемый из переменных окружения
