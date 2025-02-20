@@ -28,8 +28,6 @@ export function UserButton({ user }: UserButtonProps) {
 
 	if (!user) return null
 
-	console.log(user);
-
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger>
