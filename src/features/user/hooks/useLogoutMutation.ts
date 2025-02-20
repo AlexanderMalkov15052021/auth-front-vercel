@@ -17,7 +17,7 @@ export function useLogoutMutation() {
 		mutationFn: () => authService.logout(),
 		onSuccess() {
 			toast.success('Вы успешно вышли из системы')
-			router.push('/auth/login')
+			// router.push('/auth/login')
 		},
 		onError(error) {
 			toastMessageHandler(error)
