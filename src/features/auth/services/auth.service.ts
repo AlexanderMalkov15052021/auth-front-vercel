@@ -70,7 +70,8 @@ class AuthService {
 	 * @returns {Promise<void>} - Ответ от сервера.
 	 */
 	public async logout() {
-		const response = await api.post('auth/logout')
+		const response = await proxyAPI.post('api/auth/logout')
+		// const response = await api.post('auth/logout')
 
 		return response
 	}
