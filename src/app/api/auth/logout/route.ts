@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
             },
             body: JSON.stringify({})
         });
-        
+
         const { cookie } = await serverReq.json();
 
         const res = NextResponse.json({
@@ -20,12 +20,9 @@ export async function POST(req: NextRequest) {
             cookie: cookie
         });
 
-
         console.log(cookie);
 
         res.headers.set('set-cookie', cookie);
-
-        res.headers.set('Set-Cookie', 'mytoken1=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT');
 
         return res;
 

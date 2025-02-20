@@ -2,10 +2,15 @@ import type { Metadata } from 'next'
 
 import { LoginForm } from '@/features/auth/components'
 
+import dynamic from "next/dynamic";
+
 export const metadata: Metadata = {
 	title: 'Войти в аккаунт'
 }
 
-export default function LoginPage() {
-	return <LoginForm />
-}
+const LoginPage = () => <LoginForm />
+
+
+export default dynamic(() => Promise.resolve(LoginPage), {
+	ssr: false,
+});
