@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST() {
+export async function POST(req: NextRequest) {
 
     try {
+        const requestUrl = req.url;
 
         const serverReq = await fetch(`${process.env.SERVER_URL}/auth/proxy/logout` as string, {
             headers: {
@@ -10,7 +11,9 @@ export async function POST() {
             }
         });
 
-        const res = NextResponse.json({});
+        const res = NextResponse.json({
+            request: requestUrl,
+        });
 
         const { cookie } = await serverReq.json();
 
