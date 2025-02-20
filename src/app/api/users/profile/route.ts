@@ -4,15 +4,14 @@ export async function GET(req: NextRequest) {
 
     try {
 
-        // const cookie = req.headers.get('cookie');
-        const cookie = req.cookies.getAll();
+        const cookie = req.headers.get('cookie');
 
         const serverReq = await fetch(`${process.env.SERVER_URL}/users/proxy/profile` as string, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify({ cookie: `${(cookie as any)["name"]}=${(cookie as any)["value"]}` })
+            body: JSON.stringify({ cookie })
         });
 
         const response = await serverReq.json();
