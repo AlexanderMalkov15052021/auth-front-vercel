@@ -16,13 +16,13 @@ export async function GET(req: NextRequest) {
 
         const response = await serverReq.json();
 
-        const res = NextResponse.json({ ...response });
+        const res = NextResponse.json(response);
 
         return res;
 
     } catch (error) {
         console.error("Ошибка при обработке JSON:", error);
-        return NextResponse.json({ error: 'Некорректный JSON' });
+        return NextResponse.json({ error: `Некорректный JSON - ${error}` });
     }
 
 }
