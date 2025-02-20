@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
 
@@ -13,18 +12,20 @@ export async function POST(req: NextRequest) {
             },
             body: JSON.stringify({})
         });
+        
+        const { cookie } = await serverReq.json();
 
         const res = NextResponse.json({
             request: requestUrl,
+            cookie: cookie
         });
 
-        const { cookie } = await serverReq.json();
 
         console.log(cookie);
 
-        // res.headers.set('set-cookie', cookie);
+        res.headers.set('set-cookie', cookie);
 
-        cookies().delete("nset_auth_session");
+        res.headers.set('Set-Cookie', 'mytoken1=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT');
 
         return res;
 
