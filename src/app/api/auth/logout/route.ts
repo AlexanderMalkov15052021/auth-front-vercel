@@ -22,7 +22,9 @@ export async function POST(req: NextRequest) {
 
         console.log(cookie);
 
-        res.headers.set('set-cookie', 'nset_auth_session=; Domain=auth-front-vercel.vercel.app; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT');
+        const tmpCookie = cookie.replace(";", "; Domain=auth-front-vercel.vercel.app;");
+
+        res.headers.set('set-cookie', tmpCookie);
 
         return res;
 
