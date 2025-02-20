@@ -36,7 +36,7 @@ const nextConfig = {
                 source: "/",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
-                    { key: "Access-Control-Allow-Origin", value: "https://localhost:3000" },
+                    { key: "Access-Control-Allow-Origin", value: "https://nestjs-vercel-deploy-nu.vercel.app" },
                     { key: "Access-Control-Allow-Methods", value: "GET, DELETE, PATCH, POST, PUT, OPTIONS, PATCH" },
                     { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
                 ]

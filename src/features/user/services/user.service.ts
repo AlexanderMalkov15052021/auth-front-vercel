@@ -1,4 +1,4 @@
-import { api } from '@/shared/api'
+import { api, proxyAPI } from '@/shared/api'
 
 import type { TypeSettingsSchema } from '../schemes'
 import type { IUser } from '../types'
@@ -13,7 +13,8 @@ class UserService {
 	 * @returns {Promise<IUser>} - Профиль пользователя.
 	 */
 	public async findProfile() {
-		const response = await api.get<IUser>('users/profile')
+		const response = await proxyAPI.get<IUser>('api/users/profile')
+		// const response = await api.get<IUser>('users/profile')
 
 		return response
 	}
