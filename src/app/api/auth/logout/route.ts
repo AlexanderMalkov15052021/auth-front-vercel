@@ -17,6 +17,8 @@ export async function POST(req: NextRequest) {
 
         const { cookie } = await serverReq.json();
 
+        console.log(cookie);
+
         res.headers.set('set-cookie', cookie);
 
         return res;
