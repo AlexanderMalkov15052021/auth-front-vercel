@@ -28,13 +28,12 @@ export function useLoginMutation(
 		onSuccess(data: any) {
 			if (data.message) {
 				toastMessageHandler(data)
-				setIsShowFactor(true)
+				!data.error && setIsShowFactor(true)
 			} else {
 				toast.success('Успешная авторизация')
 				setTimeout(() => {
 					router.push('/dashboard/settings')
-				}, 3000);
-
+				}, 1000);
 			}
 		},
 		onError(error) {

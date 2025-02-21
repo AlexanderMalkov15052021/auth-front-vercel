@@ -42,8 +42,8 @@ export interface IUser {
 	display_name: string
 	picture: string
 	role: UserRole
-	isVerified: boolean
-	isTwoFactorEnabled: boolean
+	is_verified: boolean
+	is_two_factor_enabled: boolean
 	method: AuthMethod
 	accounts: IAccount[]
 }

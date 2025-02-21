@@ -41,7 +41,7 @@ export function SettingsForm() {
 			name: user?.display_name || '',
 			email: user?.email || '',
 			password: user?.password || '',
-			isTwoFactorEnabled: user?.isTwoFactorEnabled || false
+			isTwoFactorEnabled: user?.is_two_factor_enabled || false
 		}
 	})
 
@@ -51,7 +51,12 @@ export function SettingsForm() {
 		update({ values })
 	}
 
-	if (!user) return null
+	if (!user?.id) {
+		console.log("Пользователь не найден!");
+
+		return null;
+	}
+
 
 	return (
 		<Card className='w-[400px]'>

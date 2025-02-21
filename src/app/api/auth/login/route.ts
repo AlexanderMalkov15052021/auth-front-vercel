@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
 
     try {
-        const requestUrl = req.url;
 
         const body = await req.json();
 
@@ -15,21 +14,11 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify(body)
         });
 
-        const res = NextResponse.json({
-            request: requestUrl,
-        });
+        const reqBody = await serverReq.json();
 
-        const { cookie } = await serverReq.json();
+        const res = NextResponse.json(reqBody["body"]);
 
-        // console.log("cookie: ", cookie);
-
-        // const cookie = serverReq.headers.get('set-cookie');
-
-        console.log("cookie: ", cookie);
-
-        res.headers.set('set-cookie', cookie);  // nset_auth_session
-
-        // res.cookies.set('nset_auth_session', data);
+        reqBody["cookie"] && res.headers.set('set-cookie', reqBody["cookie"]);
 
         return res;
 
