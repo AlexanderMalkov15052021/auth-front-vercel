@@ -26,7 +26,7 @@ class UserService {
 	 * @returns {Promise<IUser>} - Обновленный профиль пользователя.
 	 */
 	public async updateProfile(body: TypeSettingsSchema) {
-		const response = await api.patch<IUser>('users/profile', body)
+		const response = await proxyAPI.patch<IUser>('api/users/profile', body)
 
 		return response
 	}

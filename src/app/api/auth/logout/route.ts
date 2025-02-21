@@ -20,8 +20,6 @@ export async function POST(req: NextRequest) {
             cookie: cookie
         });
 
-        console.log(cookie);
-
         const tmpCookie = cookie.replace(";", `; Domain=${process.env.COOKIE_DOMAIN};`);
 
         res.headers.set('set-cookie', tmpCookie);
