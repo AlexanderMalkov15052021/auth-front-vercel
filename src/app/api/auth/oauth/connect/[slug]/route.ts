@@ -16,7 +16,7 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 
         const reqBody = await serverReq.json();
 
-        console.log(123, reqBody);
+        console.log(123, params.slug);
 
         const res = NextResponse.json(reqBody["body"]);
 
