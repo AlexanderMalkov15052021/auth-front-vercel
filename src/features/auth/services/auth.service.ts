@@ -57,11 +57,9 @@ class AuthService {
 	 * @returns {Promise<{ url: string }>} - URL для аутентификации.
 	 */
 	public async oauthByProvider(provider: 'google' | 'yandex') {
-		const response = await api.get<{ url: string }>(
-			`auth/oauth/connect/${provider}`
+		const response = await proxyAPI.get<{ url: string }>(
+			`api/auth/oauth/connect/${provider}`
 		)
-
-		console.log(123, response);
 
 		return response
 	}
