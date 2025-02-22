@@ -61,6 +61,8 @@ class AuthService {
 			`auth/oauth/connect/${provider}`
 		)
 
+		console.log(123, response);
+
 		return response
 	}
 
