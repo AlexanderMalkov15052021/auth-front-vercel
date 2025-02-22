@@ -6,7 +6,7 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 
     try {
 
-        const serverReq = await fetch(`${process.env.SERVER_URL}/auth/proxy/logout` as string, {
+        const serverReq = await fetch(`https://nestjs-vercel-deploy-nu.vercel.app/auth/oauth/proxy/connect/yandex` as string, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
