@@ -16,6 +16,8 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 
         const reqBody = await serverReq.json();
 
+        console.log(reqBody);
+
         const res = NextResponse.json(reqBody["body"]);
 
         res.headers.set('set-cookie', reqBody["cookie"]);
