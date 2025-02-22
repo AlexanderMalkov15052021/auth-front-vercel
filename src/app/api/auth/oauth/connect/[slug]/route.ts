@@ -1,9 +1,8 @@
-import type { NextApiRequest } from 'next'
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(_: NextApiRequest, { params }: { params: { slug: string } }) {
+export async function GET(_: NextRequest, { params }: { params: { slug: string } }) {
 
     try {
 
