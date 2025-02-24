@@ -1,4 +1,4 @@
-import { api } from '@/shared/api'
+import { proxyAPI } from '@/shared/api'
 
 /**
  * Сервис для верификации электронной почты.
@@ -11,7 +11,8 @@ class VerificationService {
 	 * @returns {Promise<any>} - Ответ от сервера.
 	 */
 	public async newVerification(token: string | null) {
-		const response = await api.post('auth/email-confirmation', { token })
+
+		const response = await proxyAPI.post('api/auth/email-confirmation', { token })
 
 		return response
 	}

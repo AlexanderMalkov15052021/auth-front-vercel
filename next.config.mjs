@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	reactStrictMode: false,
 	// Экспериментальные функции для Next.js
 	experimental: {
 		// Отключение функции "missing Suspense with CSR bailout"
