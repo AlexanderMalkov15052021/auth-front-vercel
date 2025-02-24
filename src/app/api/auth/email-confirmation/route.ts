@@ -18,8 +18,6 @@ export async function POST(req: NextRequest) {
 
         const res = NextResponse.json(reqBody["body"]);
 
-        console.log(1, "cookie: ", reqBody["cookie"]);
-
         reqBody["cookie"] && res.headers.set('set-cookie', reqBody["cookie"]);
 
         return res;
