@@ -16,11 +16,12 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 
         const reqBody = await serverReq.json();
 
-        // console.log(123, `${process.env.SERVER_URL}/auth/oauth/proxy/connect/${params.slug}`);
-
         const res = NextResponse.json(reqBody["body"]);
 
-        res.headers.set('set-cookie', reqBody["cookie"]);
+        // res.headers.set('set-cookie', reqBody["cookie"]);
+
+        // console.log(123, "body: ", reqBody["body"]);
+        // console.log(123, "res: ", res);
 
         return res;
 
