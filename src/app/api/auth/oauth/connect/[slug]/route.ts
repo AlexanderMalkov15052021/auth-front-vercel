@@ -18,11 +18,6 @@ export async function GET(_: NextRequest, { params }: { params: { slug: string }
 
         const res = NextResponse.json(reqBody["body"]);
 
-        // res.headers.set('set-cookie', reqBody["cookie"]);
-
-        // console.log(123, "body: ", reqBody["body"]);
-        // console.log(123, "res: ", res);
-
         return res;
 
     } catch (error) {

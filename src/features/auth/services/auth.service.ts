@@ -17,7 +17,7 @@ class AuthService {
 	public async register(body: TypeRegisterSchema, recaptcha?: string) {
 		const headers = recaptcha ? { recaptcha } : undefined
 
-		const response = await api.post<IAuthResponse>('auth/register', body, {
+		const response = await proxyAPI.post<IAuthResponse>('api/auth/register', body, {
 			headers
 		})
 
